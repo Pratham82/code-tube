@@ -5,3 +5,6 @@ package-lock.json
 
 # production
 /build
+
+# mocks
+/src/mocks
