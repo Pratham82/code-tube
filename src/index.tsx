@@ -1,8 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
+import { makeServer } from "mocks/server";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+
+// start mockBee
+makeServer();
 
 ReactDOM.render(
   <React.StrictMode>
