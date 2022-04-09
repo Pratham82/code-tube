@@ -1,0 +1,27 @@
+.container {
+  display: flex;
+  height: 100vh;
+  padding-top: var(--u-55);
+}
+
+main {
+  flex-grow: 1;
+}
+
+.dark-main {
+  background-color: var(--dark-bg-primary);
+  color: var(--color-light);
+}
+
+section {
+  padding-top: var(--u-24);
+  max-width: 900px;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.main-content {
+  flex-grow: 1;
+  background-color: grey;
+  /* height: 100vh; */
+}

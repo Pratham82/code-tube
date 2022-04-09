@@ -1,0 +1,76 @@
+.video-card {
+  width: 260px;
+  margin: var(--u-8);
+  background-color: var(--body);
+  transition: var(--normal-transition);
+  cursor: pointer;
+  position: relative;
+}
+
+.views-card {
+  position: absolute;
+  background-color: var(--dark-bg-primary);
+  color: var(--color-light);
+  left: 225px;
+  top: 120px;
+  font-size: var(--text-xs);
+  border-radius: var(--rounded-sm);
+}
+
+.video-card:hover {
+  transform: scale(1.16);
+  box-shadow: var(--normal-shadow);
+  .title {
+    white-space: normal;
+    overflow: auto;
+  }
+}
+
+.thumbnail {
+  width: 100%;
+}
+
+.channelLogo {
+  width: 30px;
+  height: 30px;
+  border-radius: var(--rounded-full);
+  border: var(--u-1) solid var(--color-light);
+}
+
+.title {
+  font-size: var(--text-sm);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 175px;
+}
+
+.dark-video-card {
+  @extend .video-card;
+  background-color: var(--dark-bg-primary);
+}
+
+// Options style
+.options {
+  width: 30px;
+  height: 30px;
+  border: none;
+  border-radius: 50%;
+  margin-left: auto;
+  background-color: transparent;
+  cursor: pointer;
+  // display: none;
+}
+
+.options:active {
+  border: 1px solid var(--color-secondary);
+}
+
+.dark-options {
+  @extend .options;
+  color: var(--color-light);
+}
+
+.dark-options:active {
+  border: 1px solid var(--color-light);
+}
