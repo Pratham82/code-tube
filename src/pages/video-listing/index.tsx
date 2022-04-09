@@ -1,3 +1,3 @@
-export default function Videos() {
-  return <>Videos</>;
+export default function Explore() {
+  return <>Explore</>;
 }
