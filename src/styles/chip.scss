@@ -1,0 +1,36 @@
+.chip {
+  background-color: var(--color-tertiary);
+  padding: var(--u-4) var(--u-10);
+  margin: var(--u-8) var(--u-6);
+  border-radius: var(--rounded-2xl);
+  border: var(--u-1) solid var(--color-dark);
+  cursor: pointer;
+}
+
+.chip-active {
+  background-color: var(--color-dark);
+  color: var(--color-light);
+  font-weight: 500;
+}
+
+// Dark chip
+.dark-chip {
+  @extend .chip;
+  background-color: var(--dark-bg-secondary);
+  color: var(--color-light);
+  border: var(--u-1) solid var(--dark-bg-tertiary);
+}
+
+.dark-chip-active {
+  background-color: var(--color-tertiary);
+  color: var(--color-dark);
+  font-weight: 500;
+}
+
+.close-icon {
+  font-size: var(--text-lg);
+}
+
+.chip-container {
+  margin: var(--u-6) 0;
+}
