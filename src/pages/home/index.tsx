@@ -2,9 +2,8 @@ import "styles/home.scss";
 import useTheme from "hooks/useTheme";
 import useVideos from "hooks/useVideos";
 import Loader from "assets/icons/Loader";
-import { Toaster } from "react-hot-toast";
 import ChipsContainer from "components/chips-container";
-import VideoCard from "components/videoCard";
+import VideoCard from "components/video-card";
 
 export default function Home() {
   const {
@@ -13,7 +12,6 @@ export default function Home() {
   const { categories, filteredVideos, loading } = useVideos();
   return (
     <main className={`${currentTheme}main`}>
-      <Toaster position="bottom-center" />
       <section>
         {loading ? (
           <Loader type={currentTheme === "dark-" ? "dark" : "light"} />
