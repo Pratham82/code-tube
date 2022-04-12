@@ -7,7 +7,7 @@ export const videos = [
   {
     _id: "zDNaUi2cjv4",
     alt: "video alt",
-    views: "206573",
+    views: "206,573",
     duration: 135,
     title: "Binary Explained in 01100100 Seconds",
     thumbnail: "https://i3.ytimg.com/vi/zDNaUi2cjv4/maxresdefault.jpg",
