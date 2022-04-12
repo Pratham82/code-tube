@@ -11,7 +11,7 @@ export const videos = [
     duration: 135,
     title: "Binary Explained in 01100100 Seconds",
     thumbnail: "https://i3.ytimg.com/vi/zDNaUi2cjv4/maxresdefault.jpg",
-    channelName: "Fireship",
+    channelName: "Fireship.io",
     channelLogo:
       "https://yt3.ggpht.com/ytc/AKedOLR5CDv14gL4DQ7I4gxIlBMY6u-CNsq2qfeev48R2g=s48-c-k-c0x00ffffff-no-rj",
     category: "CS 101",
@@ -26,7 +26,7 @@ export const videos = [
     duration: 124,
     title: "React in 100 Seconds",
     thumbnail: "https://i3.ytimg.com/vi/Tn6-PIqc4UM/maxresdefault.jpg",
-    channelName: "Fireship",
+    channelName: "Fireship.io",
     channelLogo:
       "https://yt3.ggpht.com/ytc/AKedOLR5CDv14gL4DQ7I4gxIlBMY6u-CNsq2qfeev48R2g=s48-c-k-c0x00ffffff-no-rj",
     category: "React",
@@ -41,7 +41,7 @@ export const videos = [
     duration: 971,
     title: "Node.js Ultimate Beginner’s Guide in 7 Easy Steps",
     thumbnail: "https://i3.ytimg.com/vi/ENrzD9HAZK4/maxresdefault.jpg",
-    channelName: "Fireship",
+    channelName: "Fireship.io",
     channelLogo:
       "https://yt3.ggpht.com/ytc/AKedOLR5CDv14gL4DQ7I4gxIlBMY6u-CNsq2qfeev48R2g=s48-c-k-c0x00ffffff-no-rj",
     category: "Backend Development",
@@ -56,7 +56,7 @@ export const videos = [
     duration: 556,
     title: "Is Web3 all Hype? Top 10 Web 3.0 Questions & Answers",
     thumbnail: "https://i3.ytimg.com/vi/wHTcrmhskto/maxresdefault.jpg",
-    channelName: "Fireship",
+    channelName: "Fireship.io",
     channelLogo:
       "https://yt3.ggpht.com/ytc/AKedOLR5CDv14gL4DQ7I4gxIlBMY6u-CNsq2qfeev48R2g=s48-c-k-c0x00ffffff-no-rj",
     category: "Web 3",
@@ -71,7 +71,7 @@ export const videos = [
     duration: 680,
     title: "25 VS Code Productivity Tips and Speed Hacks",
     thumbnail: "https://i3.ytimg.com/vi/ifTF3ags0XI/maxresdefault.jpg",
-    channelName: "Fireship",
+    channelName: "Fireship.io",
     channelLogo:
       "https://yt3.ggpht.com/ytc/AKedOLR5CDv14gL4DQ7I4gxIlBMY6u-CNsq2qfeev48R2g=s48-c-k-c0x00ffffff-no-rj",
     category: "Developer Productivity",
