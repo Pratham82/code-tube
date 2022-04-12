@@ -32,13 +32,13 @@ export default function ActionModal({
             : handleAction(REMOVE_WATCH_LATER, WATCH_LATER)
         }
       >
-        {!isDuplicateWatchLater ? (
+        {isDuplicateWatchLater ? (
           <>
-            <i className="fas fa-clock pr-2" /> Watch Later
+            <i className="fas fa-clock pr-2" /> Remove Watch Later
           </>
         ) : (
           <>
-            <i className="far fa-clock pr-2" /> Remove Watch Later
+            <i className="far fa-clock pr-2" /> Watch Later
           </>
         )}
       </button>
@@ -52,14 +52,15 @@ export default function ActionModal({
             : () => handleAction(REMOVE_LIKED, LIKES)
         }
       >
-        {!isDuplicateLiked ? (
+        {isDuplicateLiked ? (
           <>
             <i className="fas fa-thumbs-up pr-6" />
-            Like Video
+            Remove Liked
           </>
         ) : (
           <>
-            <i className="far fa-thumbs-up pr-2" /> Remove Liked
+            <i className="far fa-thumbs-up pr-2" />
+            Like Video
           </>
         )}
       </button>
