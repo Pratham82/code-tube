@@ -4,6 +4,7 @@ import {
   FILTER_BY_CATEGORIES,
   REMOVE_CATEGORY,
   SET_LOADING,
+  SET_SELECTED_VIDEO,
 } from "types/videos";
 
 const videoReducer = (videosData: any, { type, payload }: any) => {
@@ -32,6 +33,12 @@ const videoReducer = (videosData: any, { type, payload }: any) => {
         selectedCategories: videosData.selectedCategories.filter(
           (category: any) => category !== payload,
         ),
+      };
+
+    case SET_SELECTED_VIDEO:
+      return {
+        ...videosData,
+        selectedVideo: { ...payload },
       };
 
     case SET_LOADING:
