@@ -15,7 +15,7 @@ export default function PageRoutes() {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/videos" element={<Videos />} />
-      <Route path="/video/:id" element={<VideoPage />} />
+      <Route path="/video/:videoId" element={<VideoPage />} />
       <Route path="/watchLater" element={<WatchLater />} />
       <Route path="/liked" element={<Liked />} />
       <Route path="/history" element={<History />} />
