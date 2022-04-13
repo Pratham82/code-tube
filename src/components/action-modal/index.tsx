@@ -15,12 +15,21 @@ export default function ActionModal({
   modalRef,
   handleAction,
   isDuplicates,
+  modalType,
 }: any) {
   const { isDuplicateWatchLater, isDuplicateLiked } = isDuplicates;
 
   return (
     <div
-      className={isOpen ? `${currentTheme}video-card-modal` : "hidden"}
+      className={
+        isOpen
+          ? `${currentTheme}${
+              modalType === "normal"
+                ? "video-card-modal"
+                : "video-card-modal-expanded"
+            }`
+          : "hidden"
+      }
       ref={modalRef}
     >
       <button

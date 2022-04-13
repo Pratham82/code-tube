@@ -144,6 +144,7 @@ export default function VideoCard({ cardData }: any) {
         handleAction={handleAction}
         videoId={videoId}
         isDuplicates={{ isDuplicateWatchLater, isDuplicateLiked }}
+        modalType="normal"
       />
     </div>
   );
