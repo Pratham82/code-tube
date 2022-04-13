@@ -11,10 +11,10 @@ export default function WatchLater() {
   const { watchLater, loading } = usePlayList();
   return (
     <main className={`${currentTheme}main`}>
-      <div className="flex text-center justify-center pt-10">
-        <h3 className="h3">Watch later videos: {watchLater.length}</h3>
-      </div>
       <section>
+        <div className="flex text-center justify-center">
+          <h3 className="h3">Watch later videos: {watchLater.length}</h3>
+        </div>
         {loading ? (
           <Loader type={currentTheme === "dark-" ? "dark" : "light"} />
         ) : (

@@ -5,7 +5,11 @@ export const ADD_TO_LIKED = "Added to liked videos";
 export const REMOVE_LIKED = "Removed from liked videos";
 export const ADD_TO_PLAYLIST = "Added to playlist";
 export const REMOVE_FROM_PLAYLIST = "Removed from playlist";
+export const ADD_TO_HISTORY = "Added to history";
+export const REMOVED_FROM_HISTORY = "Removed from history";
+export const CLEAR_HISTORY = "Cleared history";
 
 export const WATCH_LATER = "WATCH_LATER";
 export const LIKES = "LIKES";
+export const HISTORY = "HISTORY";
 export const PLAYLIST = "PLAYLIST";

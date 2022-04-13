@@ -9,23 +9,28 @@ import {
   removeFromPredefinedPlaylist,
 } from "services/common";
 import "styles/videoCard.scss";
-import { LIKES, WATCH_LATER } from "types/playlists";
+import "styles/video-page.scss";
+import {
+  HISTORY,
+  LIKES,
+  REMOVED_FROM_HISTORY,
+  WATCH_LATER,
+} from "types/playlists";
 import { isDuplicate } from "utils/index";
 
 function LinkWrapper({ children, videoId }: any) {
   return <Link to={`/video/${videoId}`}>{children}</Link>;
 }
-export default function VideoCard({ cardData }: any) {
+export default function VideoCardExpanded({ cardData }: any) {
   const {
     theme: { currentTheme },
   } = useTheme();
   const { watchLater, likes, dispatchPlaylist } = usePlayList();
   const { _id: videoId } = cardData;
-  const { title, channelName, thumbnail, channelLogo, duration, alt } =
+  const { title, channelName, views, thumbnail, channelLogo, duration, alt } =
     cardData;
 
   const [isOpen, setIsOpen] = useState(false);
-  const [body, setBody] = useState(false);
   const modalRef = useRef<any>(null);
   const onClickOutside = useCallback(() => setIsOpen(false), []);
 
@@ -85,24 +90,24 @@ export default function VideoCard({ cardData }: any) {
               playlistType,
               currentTheme,
             );
+      case HISTORY:
+        return removeFromPredefinedPlaylist(
+          videoId,
+          dispatchPlaylist,
+          dispatchType,
+          playlistType,
+          currentTheme,
+        );
       default:
         setIsOpen(false);
     }
-
     //  Close modal
     return setIsOpen(false);
   };
 
   return (
-    <div className="flex flex-col">
-      <div
-        className={`${currentTheme}video-card`}
-        onMouseEnter={() => {
-          setBody(true);
-          setIsOpen(false);
-        }}
-        onMouseLeave={() => setBody(false)}
-      >
+    <div className="flex flex-wrap">
+      <div className={`${currentTheme}video-card-expanded`}>
         <LinkWrapper videoId={videoId}>
           <div className="flex">
             <img src={thumbnail} alt={alt} className="thumbnail" />
@@ -111,31 +116,35 @@ export default function VideoCard({ cardData }: any) {
             </div>
           </div>
         </LinkWrapper>
-        <div style={{ display: body ? "block" : "none" }}>
-          <div className="flex pt-12 pb-10 pl-4 pr-4">
-            <img src={channelLogo} alt={alt} className="channelLogo mr-8" />
-            <p className="title">{title}</p>
-          </div>
-        </div>
       </div>
-
-      {!body && (
-        <div className="flex pt-6 pb-10 pl-8 pr-4">
-          <Tooltip text={channelName}>
-            <img src={channelLogo} alt={alt} className="channelLogo mr-8" />
-          </Tooltip>
-          <Tooltip text={title} delay={500}>
-            <p className="title">{title}</p>
-          </Tooltip>
-          <button
-            type="button"
-            className={`${currentTheme}options`}
-            onClick={() => setIsOpen(!isOpen)}
-          >
-            <i className="fas fa-ellipsis-v" />
-          </button>
-        </div>
-      )}
+      <div className="flex pt-6 pb-10 pl-8 pr-4 video-info flex-wrap">
+        <Tooltip text={channelName}>
+          <img src={channelLogo} alt={alt} className="channelLogo mr-8" />
+        </Tooltip>
+        <Tooltip text={title} delay={500}>
+          <p className="history-title">{title}</p>
+          <span>
+            <span className="channelName pr-10">{channelName}</span>
+            <span className="video-views">{views} views</span>
+          </span>
+        </Tooltip>
+      </div>
+      <div className="history-options">
+        <button
+          type="button"
+          className={`${currentTheme}options`}
+          onClick={() => handleAction(REMOVED_FROM_HISTORY, HISTORY)}
+        >
+          <i className="fas fa-times" />
+        </button>
+        <button
+          type="button"
+          className={`${currentTheme}options`}
+          onClick={() => setIsOpen(!isOpen)}
+        >
+          <i className="fas fa-ellipsis-v" />
+        </button>
+      </div>
 
       <ActionModal
         isOpen={isOpen}
@@ -144,7 +153,7 @@ export default function VideoCard({ cardData }: any) {
         handleAction={handleAction}
         videoId={videoId}
         isDuplicates={{ isDuplicateWatchLater, isDuplicateLiked }}
-        modalType="normal"
+        modalType="expanded"
       />
     </div>
   );

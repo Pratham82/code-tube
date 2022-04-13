@@ -4,6 +4,9 @@ import {
   INIT_PLAYLIST,
   REMOVE_LIKED,
   REMOVE_WATCH_LATER,
+  ADD_TO_HISTORY,
+  REMOVED_FROM_HISTORY,
+  CLEAR_HISTORY,
 } from "types/playlists";
 import { SET_LOADING } from "types/videos";
 
@@ -33,6 +36,21 @@ const playlistReducer = (playlistData: any, { type, payload }: any) => {
       return {
         ...playlistData,
         likes: [...payload],
+      };
+    case ADD_TO_HISTORY:
+      return {
+        ...playlistData,
+        history: [...payload],
+      };
+    case REMOVED_FROM_HISTORY:
+      return {
+        ...playlistData,
+        history: [...payload],
+      };
+    case CLEAR_HISTORY:
+      return {
+        ...playlistData,
+        history: [...payload],
       };
     case SET_LOADING:
       return {

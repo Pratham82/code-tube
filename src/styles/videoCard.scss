@@ -78,12 +78,9 @@
 
 // Video cord modal
 .video-card-modal {
-  // padding: 5px 10px;
   flex-direction: column;
   position: absolute;
   display: flex;
-  // justify-content: left;
-  // align-items: left;
   background-color: var(--color-light);
   margin-top: 200px;
   margin-left: 120px;
@@ -128,4 +125,56 @@
 
 .dark-modal-actions:hover {
   background-color: var(--dark-bg-tertiary);
+}
+
+// Expanded video card styles
+.video-card-expanded {
+  @extend .video-card;
+}
+
+.dark-video-card-expanded {
+  @extend .video-card;
+}
+
+.history-title {
+  font-size: var(--text-sm);
+  white-space: wrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  // width: 400px;
+}
+
+// Video cord modal expanded
+.video-card-modal-expanded {
+  flex-direction: column;
+  position: absolute;
+  display: flex;
+  background-color: var(--color-light);
+  margin-top: 45px;
+  margin-left: 720px;
+  z-index: 9;
+  box-shadow: var(--material-shadow);
+}
+
+.dark-video-card-modal-expanded {
+  @extend .video-card-modal-expanded;
+  background-color: var(--dark-bg-secondary);
+  color: var(--color-light);
+}
+
+.history-options {
+  margin-left: auto;
+}
+
+.clear-all-btn {
+  background-color: transparent;
+  border: none;
+  font-size: var(--text-base);
+  margin-right: var(--u-10);
+  cursor: pointer;
+}
+
+.dark-clear-all-btn {
+  @extend .clear-all-btn;
+  color: var(--color-light);
 }
