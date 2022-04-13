@@ -10,6 +10,7 @@ interface IUrls {
 const dict: IUrls = {
   WATCH_LATER: "/api/user/watchlater",
   LIKES: "/api/user/likes",
+  HISTORY: "/api/user/history",
 };
 
 /**
@@ -29,7 +30,7 @@ export const addToPredefinedPlaylist = async (
 ) => {
   try {
     const {
-      data: { watchlater, likes },
+      data: { watchlater, likes, history },
     } = await axios.post(
       `${dict[actionType]}`,
       { video },
@@ -41,7 +42,7 @@ export const addToPredefinedPlaylist = async (
     );
     dispatch({
       type: dispatchType,
-      payload: watchlater || likes,
+      payload: watchlater || likes || history,
     });
     if (theme) {
       toast.success(dispatchType, {
@@ -75,7 +76,7 @@ export const removeFromPredefinedPlaylist = async (
 ) => {
   try {
     const {
-      data: { watchlater, likes },
+      data: { watchlater, likes, history },
     } = await axios.delete(`${dict[actionType]}/${videoId}`, {
       headers: {
         authorization: staticToken,
@@ -83,7 +84,7 @@ export const removeFromPredefinedPlaylist = async (
     });
     dispatch({
       type: dispatchType,
-      payload: watchlater || likes,
+      payload: watchlater || likes || history,
     });
     if (theme) {
       toast.success(dispatchType, {
