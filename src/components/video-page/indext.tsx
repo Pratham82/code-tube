@@ -2,9 +2,11 @@ import "styles/video-page.scss";
 import useTheme from "hooks/useTheme";
 import { useParams } from "react-router-dom";
 import {
+  ADD_TO_HISTORY,
   ADD_TO_LIKED,
   ADD_TO_PLAYLIST,
   ADD_TO_WATCH_LATER,
+  HISTORY,
   LIKES,
   PLAYLIST,
   REMOVE_LIKED,
@@ -23,21 +25,41 @@ import { SET_SELECTED_VIDEO } from "types/videos";
 import { setSelectedVideo } from "services/videos";
 import Loader from "assets/icons/Loader";
 import Tooltip from "components/tooltip";
+import axios from "axios";
 
 export default function VideoPage() {
   const { videoId } = useParams();
   const {
     theme: { currentTheme },
   } = useTheme();
-  const { likes, watchLater, dispatchPlaylist } = usePlayList();
+  const { likes, watchLater, history, dispatchPlaylist } = usePlayList();
 
   // common duplication check
-  const isDuplicateWatchLater = isDuplicate(videoId, watchLater);
-  const isDuplicateLiked = isDuplicate(videoId, likes);
+  const [isDuplicateWatchLater, isDuplicateLiked, isDuplicateHistory] = [
+    watchLater,
+    likes,
+    history,
+  ].map((entity) => isDuplicate(videoId, entity));
 
   const { selectedVideo, dispatchVideos, loading } = useVideos();
+
+  const handleHistory = async () => {
+    const {
+      data: { video },
+    } = await axios.get(`/api/video/${videoId}`);
+    if (!isDuplicateHistory)
+      addToPredefinedPlaylist(
+        video,
+        dispatchPlaylist,
+        ADD_TO_HISTORY,
+        HISTORY,
+        currentTheme,
+      );
+  };
+
   useEffect(() => {
     setSelectedVideo(videoId, dispatchVideos, SET_SELECTED_VIDEO, currentTheme);
+    handleHistory();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -77,9 +99,11 @@ export default function VideoPage() {
               currentTheme,
             );
       default:
+        return selectedVideo;
     }
-    return 0;
   };
+
+  // Add video to history
 
   const { title, channelName, channelLogo, views, alt } = selectedVideo;
   return (
