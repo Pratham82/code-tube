@@ -9,6 +9,7 @@ import videoReducer from "./videoReducer";
 const initialData: any = {
   categories: [],
   videos: [],
+  selectedVideo: {},
   selectedCategories: [],
   loading: false,
 };
@@ -36,7 +37,8 @@ export default function VideoProvider({ children }: any) {
     })();
   }, []);
 
-  const { videos, selectedCategories, categories, loading } = videosData;
+  const { videos, selectedVideo, selectedCategories, categories, loading } =
+    videosData;
   const filteredVideos = getFilteredVideos(videos, selectedCategories);
 
   return (
@@ -48,6 +50,7 @@ export default function VideoProvider({ children }: any) {
         filteredVideos,
         loading,
         dispatchVideos,
+        selectedVideo,
       }}
     >
       {children}

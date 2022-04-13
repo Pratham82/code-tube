@@ -6,22 +6,25 @@ import "styles/container.scss";
 import Navbar from "components/navbar";
 import ThemeProvider from "contexts/theme/themeState";
 import VideoProvider from "contexts/videos/videoState";
+import { Toaster } from "react-hot-toast";
+import PlaylistProvider from "contexts/playlist/playlistState";
 
 function App() {
   return (
-    <div>
-      <Router>
+    <Router>
+      <PlaylistProvider>
         <VideoProvider>
           <ThemeProvider>
             <Navbar />
+            <Toaster position="bottom-left" />
             <div className="container">
               <Sidebar />
               <PageRoutes />
             </div>
           </ThemeProvider>
         </VideoProvider>
-      </Router>
-    </div>
+      </PlaylistProvider>
+    </Router>
   );
 }
 

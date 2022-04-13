@@ -14,14 +14,14 @@ const links = [
     icon: { active: "fas fa-compass", inactive: "far fa-compass" },
   },
   {
-    link: "/liked",
-    title: "LIKED",
-    icon: { active: "fas fa-thumbs-up", inactive: "far fa-thumbs-up" },
-  },
-  {
     link: "/playlists",
     title: "PLAYLISTS",
     icon: { active: "fas fa-list-alt", inactive: "far fa-list-alt" },
+  },
+  {
+    link: "/liked",
+    title: "LIKED",
+    icon: { active: "fas fa-thumbs-up", inactive: "far fa-thumbs-up" },
   },
   {
     link: "/watchLater",

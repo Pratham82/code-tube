@@ -7,13 +7,14 @@
   position: relative;
 }
 
-.views-card {
+.duration-card {
   position: absolute;
   background-color: var(--dark-bg-primary);
   color: var(--color-light);
   left: 225px;
   top: 120px;
   font-size: var(--text-xs);
+  padding: var(--u-2) var(--u-4);
   border-radius: var(--rounded-sm);
 }
 
@@ -73,4 +74,58 @@
 
 .dark-options:active {
   border: 1px solid var(--color-light);
+}
+
+// Video cord modal
+.video-card-modal {
+  // padding: 5px 10px;
+  flex-direction: column;
+  position: absolute;
+  display: flex;
+  // justify-content: left;
+  // align-items: left;
+  background-color: var(--color-light);
+  margin-top: 200px;
+  margin-left: 120px;
+  z-index: 9;
+  box-shadow: var(--material-shadow);
+}
+
+.dark-video-card-modal {
+  @extend .video-card-modal;
+  background-color: var(--dark-bg-secondary);
+  color: var(--color-light);
+}
+
+.actionBtn {
+  background-color: transparent;
+}
+
+.modal-actions {
+  padding: var(--u-8) var(--u-10);
+  border: none;
+  background-color: transparent;
+  text-align: left;
+  cursor: pointer;
+}
+
+.modal-actions:active {
+  transform: scale(0.98);
+}
+
+.modal-actions:hover {
+  background-color: var(--color-secondary);
+}
+
+.dark-modal-actions {
+  @extend .modal-actions;
+  color: var(--color-light);
+}
+
+.dark-modal-actions:active {
+  transform: scale(0.98);
+}
+
+.dark-modal-actions:hover {
+  background-color: var(--dark-bg-tertiary);
 }

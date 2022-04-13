@@ -4,3 +4,4 @@ export const SET_VIDEOS = "init-videos";
 export const SET_CATEGORIES = "init-categories";
 export const FILTER_BY_CATEGORIES = "FILTER_BY_CATEGORIES";
 export const SET_LOADING = "set-loading";
+export const SET_SELECTED_VIDEO = "set-current-video";
