@@ -7,15 +7,32 @@ import {
   ADD_TO_HISTORY,
   REMOVED_FROM_HISTORY,
   CLEAR_HISTORY,
+  ADD_NEW_PLAYLIST,
+  REMOVE_PLAYLIST,
+  ADD_TO_PLAYLIST,
+  REMOVE_FROM_PLAYLIST,
 } from "types/playlists";
 import { SET_LOADING } from "types/videos";
 
 const playlistReducer = (playlistData: any, { type, payload }: any) => {
   switch (type) {
     case INIT_PLAYLIST:
+    case REMOVE_PLAYLIST:
+    case ADD_NEW_PLAYLIST:
       return {
         ...playlistData,
         playlists: [...payload],
+      };
+    case ADD_TO_PLAYLIST:
+    case REMOVE_FROM_PLAYLIST:
+      return {
+        ...playlistData,
+        playlists: playlistData.playlists.map((playlist: any) =>
+          // eslint-disable-next-line no-underscore-dangle
+          playlist._id === payload._id
+            ? { ...playlist, videos: payload.videos }
+            : playlist,
+        ),
       };
     case ADD_TO_WATCH_LATER:
       return {

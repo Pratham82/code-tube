@@ -37,12 +37,13 @@ export default function PlaylistProvider({ children }: any) {
     })();
   }, []);
 
-  const { history, watchLater, likes, loading } = playlistData;
+  const { playlists, history, watchLater, likes, loading } = playlistData;
 
   return (
     <PlaylistContext.Provider
       // eslint-disable-next-line react/jsx-no-constructed-context-values
       value={{
+        playlists,
         history,
         loading,
         watchLater,
