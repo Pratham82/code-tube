@@ -43,6 +43,11 @@ ul > a {
   color: var(--color-dark);
 }
 
+.dark-searchIcon {
+  @extend .searchIcon;
+  color: var(--color-light);
+}
+
 .searchInput {
   width: 100%;
   padding: var(--u-6);
@@ -50,6 +55,16 @@ ul > a {
   border: var(--u-1) solid var(--color-secondary);
   border-radius: var(--rounded-md);
   outline: none;
+}
+
+.dark-searchInput {
+  @extend .searchInput;
+  border: var(--u-1) solid var(--dark-bg-secondary);
+  background-color: #000;
+}
+
+.dark-searchInput::placeholder {
+  color: var(--color-light);
 }
 
 .profile-title {
