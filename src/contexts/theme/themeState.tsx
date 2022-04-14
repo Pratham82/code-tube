@@ -7,6 +7,7 @@ const initialData = {
   mode: "light",
   expandedSidebar: true,
   currentTheme: "",
+  isModalOpen: false,
 };
 export default function ThemeProvider({ children }: any) {
   const [theme, dispatchTheme] = useReducer(themeReducer, initialData);
