@@ -1,0 +1,44 @@
+.playlist-input {
+  border: none;
+  background-color: transparent;
+  outline: none;
+  padding: var(--u-4) var(--u-8);
+  margin-bottom: var(--u-8);
+  border-bottom: var(--u-1) solid var(--color-dark);
+}
+
+.playlist-input:focus {
+  border-bottom: var(--u-2) solid var(--color-dark);
+}
+
+.playlist-input::placeholder {
+  color: rgb(138, 138, 138);
+}
+
+.dark-playlist-input {
+  @extend .playlist-input;
+  color: var(--color-light);
+  border-bottom: var(--u-1) solid var(--color-light);
+}
+
+.dark-playlist-input::placeholder {
+  color: rgb(138, 138, 138);
+}
+
+.dark-playlist-input:focus {
+  border-bottom: var(--u-2) solid var(--color-light);
+}
+
+.save-playlist-btn {
+  background-color: var(--color-secondary);
+  padding: var(--u-6) var(--u-8);
+}
+
+.playlist-container {
+  display: flex;
+}
+
+.playlist-modal-header {
+  font-size: var(--text-lg);
+  font-weight: 450;
+}
