@@ -8,6 +8,8 @@ import ThemeProvider from "contexts/theme/themeState";
 import VideoProvider from "contexts/videos/videoState";
 import { Toaster } from "react-hot-toast";
 import PlaylistProvider from "contexts/playlist/playlistState";
+import PlaylistModal from "components/playlist-modal";
+import Modal from "components/common-modal";
 
 function App() {
   return (
@@ -15,6 +17,9 @@ function App() {
       <PlaylistProvider>
         <VideoProvider>
           <ThemeProvider>
+            <Modal>
+              <PlaylistModal />
+            </Modal>
             <Navbar />
             <Toaster position="bottom-left" />
             <div className="container">

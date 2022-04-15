@@ -24,9 +24,9 @@ import { setSelectedVideo } from "services/videos";
 import Loader from "assets/icons/Loader";
 import Tooltip from "components/tooltip";
 import axios from "axios";
-import Modal from "components/common-modal";
+// import Modal from "components/common-modal";
 import { TOGGLE_MODAL } from "types/theme";
-import PlaylistModal from "components/playlist-modal";
+// import PlaylistModal from "components/playlist-modal";
 
 export default function VideoPage() {
   const { videoId } = useParams();
@@ -111,9 +111,6 @@ export default function VideoPage() {
   return (
     <main className={`${currentTheme}main`}>
       <section>
-        <Modal>
-          <PlaylistModal />
-        </Modal>
         {loading ? (
           <Loader type={currentTheme === "dark-" ? "dark" : "light"} />
         ) : (
