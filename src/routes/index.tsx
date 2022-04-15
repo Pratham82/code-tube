@@ -9,6 +9,7 @@ import {
   WatchLater,
 } from "pages";
 import VideoPage from "components/video-page/indext";
+import PlaylistPage from "pages/playlist-page/indext";
 
 export default function PageRoutes() {
   return (
@@ -16,6 +17,7 @@ export default function PageRoutes() {
       <Route path="/" element={<Home />} />
       <Route path="/videos" element={<Videos />} />
       <Route path="/video/:videoId" element={<VideoPage />} />
+      <Route path="/playlists/:playlistId" element={<PlaylistPage />} />
       <Route path="/watchLater" element={<WatchLater />} />
       <Route path="/liked" element={<Liked />} />
       <Route path="/history" element={<History />} />
