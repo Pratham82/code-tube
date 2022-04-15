@@ -69,7 +69,7 @@ export default function ActionModal({
           </>
         ) : (
           <>
-            <i className="far fa-thumbs-up pr-2" />
+            <i className="far fa-thumbs-up pr-6" />
             Like Video
           </>
         )}
