@@ -12,6 +12,7 @@ const initialData: any = {
   watchLater: [],
   likes: [],
   playlists: [],
+  selectedPlaylist: {},
 };
 
 export default function PlaylistProvider({ children }: any) {
@@ -37,13 +38,15 @@ export default function PlaylistProvider({ children }: any) {
     })();
   }, []);
 
-  const { playlists, history, watchLater, likes, loading } = playlistData;
+  const { playlists, selectedPlaylist, history, watchLater, likes, loading } =
+    playlistData;
 
   return (
     <PlaylistContext.Provider
       // eslint-disable-next-line react/jsx-no-constructed-context-values
       value={{
         playlists,
+        selectedPlaylist,
         history,
         loading,
         watchLater,

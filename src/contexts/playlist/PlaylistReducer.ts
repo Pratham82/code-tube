@@ -11,6 +11,7 @@ import {
   REMOVE_PLAYLIST,
   ADD_TO_PLAYLIST,
   REMOVE_FROM_PLAYLIST,
+  SET_PLAYLIST,
 } from "types/playlists";
 import { SET_LOADING } from "types/videos";
 
@@ -33,6 +34,11 @@ const playlistReducer = (playlistData: any, { type, payload }: any) => {
             ? { ...playlist, videos: payload.videos }
             : playlist,
         ),
+      };
+    case SET_PLAYLIST:
+      return {
+        ...playlistData,
+        selectedPlaylist: payload,
       };
     case ADD_TO_WATCH_LATER:
       return {

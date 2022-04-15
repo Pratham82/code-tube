@@ -182,3 +182,45 @@ export const deleteFromPlaylist = async (
     toast.error("Something went wrong...");
   }
 };
+
+export const getPlaylist = async (
+  playlistId: any,
+  dispatch: any,
+  dispatchType: any,
+  theme: any,
+) => {
+  dispatch({
+    type: SET_LOADING,
+    payload: true,
+  });
+  try {
+    const {
+      data: { playlist },
+    } = await axios.get(`${PLAYLIST_URL}/${playlistId}`, {
+      headers: {
+        authorization: staticToken,
+      },
+    });
+    dispatch({
+      type: dispatchType,
+      payload: playlist,
+    });
+
+    dispatch({
+      type: SET_LOADING,
+      payload: false,
+    });
+    if (theme) {
+      toast.success(dispatchType, {
+        style: {
+          background: "#333",
+          color: "#fff",
+        },
+      });
+    } else {
+      toast.success(dispatchType);
+    }
+  } catch (e) {
+    toast.error("Something went wrong...");
+  }
+};
