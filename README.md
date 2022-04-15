@@ -7,7 +7,7 @@
 
 ![Forks](https://img.shields.io/github/forks/pratham82/code-tube)
 ![Stars](https://img.shields.io/github/stars/pratham82/code-tube)
-![License](https://img.shields.io/github/license/pratham82/code-tube)
+<!-- ![License](https://img.shields.io/github/license/pratham82/code-tube) -->
 
 </div>
 
@@ -17,7 +17,7 @@
 
 - [Code Tube](#code-tube)
   - [📕 Table of Contents](#-table-of-contents)
-  - [Live Link](#live-link)
+  - [🔗 Live Link](#-live-link)
   - [📖 About](#-about)
   - [🛠️ Tech Stack](#️-tech-stack)
   - [🚀 Features](#-features)
@@ -27,7 +27,7 @@
 
 ---
 
-## Live Link
+## 🔗 Live Link
 - [Live Site](https://code-tube.vercel.app/)
 
 ## 📖 About
