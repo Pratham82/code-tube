@@ -30,11 +30,11 @@ export default function Navbar() {
 
       <div className="searchDiv">
         <input
-          className="searchInput"
+          className={`${currentTheme}searchInput`}
           type="text"
           placeholder="Search videos..."
         />
-        <i className="fal fa-search searchIcon" />
+        <i className={`fal fa-search ${currentTheme}searchIcon`} />
       </div>
 
       <ul className="flex items-center pages">

@@ -50,4 +50,20 @@ export const setSelectedVideo = async (
   }
 };
 
-export const aa = "";
+export const setClickedVideo = async (
+  videoId: any,
+  dispatch: any,
+  dispatchType: any,
+) => {
+  try {
+    const {
+      data: { video },
+    } = await axios.get(`${GET_VIDEO}${videoId}`);
+    dispatch({
+      type: dispatchType,
+      payload: video,
+    });
+  } catch (e) {
+    toast.error("Unable to fetch video..");
+  }
+};

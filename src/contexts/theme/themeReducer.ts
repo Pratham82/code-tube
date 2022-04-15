@@ -1,4 +1,4 @@
-import { TOGGLE_SIDEBAR, TOGGLE_THEME } from "types/theme";
+import { TOGGLE_MODAL, TOGGLE_SIDEBAR, TOGGLE_THEME } from "types/theme";
 import { getTheme } from "utils";
 
 export default function themeReducer(theme: any, { type }: any) {
@@ -14,6 +14,11 @@ export default function themeReducer(theme: any, { type }: any) {
       return {
         ...theme,
         expandedSidebar: !theme.expandedSidebar,
+      };
+    case TOGGLE_MODAL:
+      return {
+        ...theme,
+        isModalOpen: !theme.isModalOpen,
       };
     default:
       return {

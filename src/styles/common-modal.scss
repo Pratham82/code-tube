@@ -1,0 +1,82 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1000;
+}
+
+.wrapper {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1200;
+  width: 300px;
+  // min-height: 250px;
+  background-color: white;
+  border-radius: var(--rounded-md);
+  padding: var(--u-14) var(--u-12);
+  box-shadow: var(--material-shadow);
+}
+
+.dark-wrapper {
+  @extend .wrapper;
+  color: var(--color-light);
+  background-color: var(--dark-bg-secondary);
+}
+
+.close-modal-btn {
+  margin-left: auto;
+  background-color: transparent;
+  border: none;
+  padding: var(--u-4) var(--u-10);
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: var(--normal-transition);
+}
+
+.close-modal-btn:hover {
+  border: 1px solid var(--color-dark);
+  border-radius: var(--rounded-full);
+  background-color: var(--color-secondary);
+}
+
+.dark-close-modal-btn {
+  @extend .close-modal-btn;
+  color: var(--color-light);
+}
+
+.dark-close-modal-btn:hover {
+  border: 1px solid var(--color-light);
+  background-color: var(--dark-bg-secondary);
+}
+
+.delete-playlist-btn {
+  @extend .close-modal-btn;
+  padding: var(--u-6) var(--u-10);
+}
+
+.dark-delete-playlist-btn {
+  @extend .dark-close-modal-btn;
+  padding: var(--u-6) var(--u-10);
+}
+
+.save-playlist-btn {
+  width: 100%;
+  padding: var(--u-6) var(--u-8);
+  border: none;
+  border-radius: var(--rounded-md);
+  cursor: pointer;
+}
+
+.save-playlist-btn:active {
+  transform: var(--normal-transform);
+}
+
+.dark-save-playlist-btn {
+  @extend .save-playlist-btn;
+  background-color: var(--color-light);
+}

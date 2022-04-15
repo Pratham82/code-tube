@@ -27,6 +27,15 @@
   }
 }
 
+.video-action{
+  font-size: var(--text-sm);
+}
+
+.dark-video-action{
+  @extend .video-action;
+  color: var(--color-light);
+}
+
 .thumbnail {
   width: 100%;
 }

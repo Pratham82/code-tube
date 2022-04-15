@@ -3,7 +3,7 @@ import Tooltip from "components/tooltip";
 import usePlayList from "hooks/usePlaylists";
 import useTheme from "hooks/useTheme";
 import { useState, useEffect, useRef, useCallback } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import {
   addToPredefinedPlaylist,
   removeFromPredefinedPlaylist,
@@ -14,14 +14,16 @@ import {
   HISTORY,
   LIKES,
   REMOVED_FROM_HISTORY,
+  REMOVE_FROM_PLAYLIST,
   WATCH_LATER,
 } from "types/playlists";
 import { isDuplicate } from "utils/index";
+import { deleteFromPlaylist } from "services/playlist";
 
 function LinkWrapper({ children, videoId }: any) {
   return <Link to={`/video/${videoId}`}>{children}</Link>;
 }
-export default function VideoCardExpanded({ cardData }: any) {
+export default function VideoCardExpanded({ cardData, playlistId }: any) {
   const {
     theme: { currentTheme },
   } = useTheme();
@@ -29,6 +31,8 @@ export default function VideoCardExpanded({ cardData }: any) {
   const { _id: videoId } = cardData;
   const { title, channelName, views, thumbnail, channelLogo, duration, alt } =
     cardData;
+
+  const { pathname } = useLocation();
 
   const [isOpen, setIsOpen] = useState(false);
   const modalRef = useRef<any>(null);
@@ -105,6 +109,20 @@ export default function VideoCardExpanded({ cardData }: any) {
     return setIsOpen(false);
   };
 
+  const handleDelete = () => {
+    if (pathname.includes("history")) {
+      handleAction(REMOVED_FROM_HISTORY, HISTORY);
+    } else {
+      deleteFromPlaylist(
+        cardData,
+        playlistId,
+        dispatchPlaylist,
+        REMOVE_FROM_PLAYLIST,
+        currentTheme,
+      );
+    }
+  };
+
   return (
     <div className="flex flex-wrap">
       <div className={`${currentTheme}video-card-expanded`}>
@@ -133,7 +151,7 @@ export default function VideoCardExpanded({ cardData }: any) {
         <button
           type="button"
           className={`${currentTheme}options`}
-          onClick={() => handleAction(REMOVED_FROM_HISTORY, HISTORY)}
+          onClick={() => handleDelete()}
         >
           <i className="fas fa-times" />
         </button>

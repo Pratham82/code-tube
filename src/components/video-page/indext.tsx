@@ -4,11 +4,9 @@ import { useParams } from "react-router-dom";
 import {
   ADD_TO_HISTORY,
   ADD_TO_LIKED,
-  ADD_TO_PLAYLIST,
   ADD_TO_WATCH_LATER,
   HISTORY,
   LIKES,
-  PLAYLIST,
   REMOVE_LIKED,
   REMOVE_WATCH_LATER,
   WATCH_LATER,
@@ -26,11 +24,15 @@ import { setSelectedVideo } from "services/videos";
 import Loader from "assets/icons/Loader";
 import Tooltip from "components/tooltip";
 import axios from "axios";
+// import Modal from "components/common-modal";
+import { TOGGLE_MODAL } from "types/theme";
+// import PlaylistModal from "components/playlist-modal";
 
 export default function VideoPage() {
   const { videoId } = useParams();
   const {
     theme: { currentTheme },
+    dispatchTheme,
   } = useTheme();
   const { likes, watchLater, history, dispatchPlaylist } = usePlayList();
 
@@ -188,7 +190,11 @@ export default function VideoPage() {
                   <button
                     type="button"
                     className={`${currentTheme}actions`}
-                    onClick={() => handleAction(ADD_TO_PLAYLIST, PLAYLIST)}
+                    onClick={() =>
+                      dispatchTheme({
+                        type: TOGGLE_MODAL,
+                      })
+                    }
                   >
                     <i className="fad fa-list-alt pr-6" />
                     Save
