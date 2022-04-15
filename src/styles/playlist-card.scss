@@ -1,0 +1,48 @@
+.playlist-card {
+  width: 250px;
+  height: 120px;
+  background-color: var(--color-light);
+  border: var(--u-1) solid var(--color-dark);
+  display: flex;
+  box-shadow: var(--material-shadow);
+  border-radius: var(--rounded-md);
+  margin: var(--u-10);
+}
+
+.dark-playlist-card {
+  @extend .playlist-card;
+  background-color: var(--dark-bg-secondary);
+  box-shadow: 0px 0px 4px 0px rgb(184, 183, 184);
+}
+
+.playlist-title {
+  display: flex;
+  flex-grow: 2;
+  justify-content: center;
+  align-items: center;
+  font-size: var(--text-lg);
+}
+
+.overlay-card {
+  padding: var(--u-6) var(--u-8);
+  background-color: rgba(24, 23, 23, 0.61);
+  flex-grow: 0.5;
+  height: 100%;
+}
+
+.play-btn {
+  border: none;
+  background-color: transparent;
+  padding: var(--u-8) var(--u-10);
+  color: var(--color-light);
+  cursor: pointer;
+}
+
+.dark-play-btn {
+  @extend .play-btn;
+}
+
+.play-icon {
+  font-size: var(--text-2xl);
+  padding-top: var(--u-8);
+}
