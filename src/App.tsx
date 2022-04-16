@@ -10,6 +10,8 @@ import { Toaster } from "react-hot-toast";
 import PlaylistProvider from "contexts/playlist/playlistState";
 import PlaylistModal from "components/playlist-modal";
 import Modal from "components/common-modal";
+import BottomBar from "components/bottom-bar";
+import Container from "components/container";
 
 function App() {
   return (
@@ -22,10 +24,11 @@ function App() {
             </Modal>
             <Navbar />
             <Toaster position="bottom-left" />
-            <div className="container">
+            <Container>
               <Sidebar />
               <PageRoutes />
-            </div>
+              <BottomBar />
+            </Container>
           </ThemeProvider>
         </VideoProvider>
       </PlaylistProvider>

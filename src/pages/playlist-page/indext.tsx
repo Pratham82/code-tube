@@ -57,7 +57,12 @@ export default function PlaylistPage() {
             <div className="flex-col ml-4 mr-10">
               {activePLaylist.videos &&
                 activePLaylist.videos.map((data: any) => (
-                  <VideoCardExpanded cardData={data} playlistId={playlistId} />
+                  <VideoCardExpanded
+                    cardData={data}
+                    // eslint-disable-next-line no-underscore-dangle
+                    key={data._id}
+                    playlistId={playlistId}
+                  />
                 ))}
             </div>
           </div>

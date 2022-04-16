@@ -27,13 +27,17 @@
   }
 }
 
-.video-action{
+.video-action {
   font-size: var(--text-sm);
 }
 
-.dark-video-action{
+.dark-video-action {
   @extend .video-action;
   color: var(--color-light);
+}
+
+.ml-auto {
+  margin-left: auto;
 }
 
 .thumbnail {
@@ -159,8 +163,7 @@
   position: absolute;
   display: flex;
   background-color: var(--color-light);
-  margin-top: 45px;
-  margin-left: 720px;
+  right: 5%;
   z-index: 9;
   box-shadow: var(--material-shadow);
 }

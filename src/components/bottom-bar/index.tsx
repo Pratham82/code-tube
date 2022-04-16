@@ -35,19 +35,15 @@ const links = [
   },
 ];
 
-export default function Sidebar() {
+export default function BottomBar() {
   const {
-    theme: { expandedSidebar, currentTheme },
+    theme: { currentTheme },
   } = useTheme();
   const { pathname } = useLocation();
 
   return (
-    <div
-      className={`${currentTheme}sidebar ${
-        expandedSidebar ? "sidebar-expanded" : "sidebar-collapsed"
-      }`}
-    >
-      <div className="flex flex-col p-8">
+    <div className={`${currentTheme}bottom-bar`} style={{ color: "red" }}>
+      <div className="flex p-8 bottom-bar-container">
         {links.map(({ link, title, icon }) => (
           <NavLink
             to={link}
@@ -58,17 +54,13 @@ export default function Sidebar() {
             }
             key={link}
           >
-            <div
-              className={`flex items-center p-10 text-center ${
-                !expandedSidebar && "flex-col"
-              }`}
-            >
+            <div className="flex items-center p-6 text-center flex-col">
               <i
                 className={`icon
                       ${pathname === link ? icon?.active : icon?.inactive}
                     `}
               />
-              <p className={`${expandedSidebar ? "pl-12" : "pt-4"}`}>{title}</p>
+              <p className="p-4">{title}</p>
             </div>
           </NavLink>
         ))}

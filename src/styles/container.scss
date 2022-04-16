@@ -4,6 +4,11 @@
   padding-top: var(--u-55);
 }
 
+.dark-container {
+  @extend .container;
+  background-color: var(--dark-bg-primary);
+}
+
 main {
   flex-grow: 1;
 }
@@ -23,5 +28,5 @@ section {
 .main-content {
   flex-grow: 1;
   background-color: grey;
-  /* height: 100vh; */
+  // height: 100vh;
 }

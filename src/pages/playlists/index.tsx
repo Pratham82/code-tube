@@ -21,6 +21,7 @@ export default function Playlists() {
           <div className="flex flex-wrap">
             {playlists.map(({ playlistName, _id: id, videos }: any) => (
               <PlaylistCard
+                key={id}
                 title={playlistName}
                 id={id}
                 videos={videos.length}

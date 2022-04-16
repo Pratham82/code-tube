@@ -2,9 +2,9 @@ import "styles/home.scss";
 import useTheme from "hooks/useTheme";
 import Loader from "assets/icons/Loader";
 import usePlayList from "hooks/usePlaylists";
-import VideoCardExpanded from "components/video-card-expanded";
 import { removeFromPredefinedPlaylist } from "services/common";
 import { CLEAR_HISTORY, HISTORY } from "types/playlists";
+import VideoCard from "components/video-card";
 
 export default function Liked() {
   const {
@@ -41,9 +41,9 @@ export default function Liked() {
         {loading ? (
           <Loader type={currentTheme === "dark-" ? "dark" : "light"} />
         ) : (
-          <div className="flex flex-col flex-wrap">
+          <div className="flex flex-wrap">
             {history.map((data: any) => (
-              <VideoCardExpanded cardData={data} key={data.title} />
+              <VideoCard cardData={data} key={data.title} />
             ))}
           </div>
         )}

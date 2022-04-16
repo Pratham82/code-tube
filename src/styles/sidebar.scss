@@ -49,6 +49,28 @@
   font-size: var(--text-lg);
 }
 
+// Bottom nav bar
+.bottom-bar {
+  background-color: var(--color-tertiary);
+  height: var(--u-65);
+  width: 100vw;
+  font-size: var(--text-xs);
+  position: fixed;
+  z-index: inherit;
+  bottom: 0;
+  display: none;
+}
+
+.bottom-bar-container {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.dark-bottom-bar {
+  @extend .bottom-bar;
+  background-color: var(--dark-bg-primary);
+}
+
 /* ---------------------Media queries-------------------- */
 @media screen and (max-width: 620px) {
   .sidebar {
@@ -57,5 +79,12 @@
 
   .dark-sidebar {
     display: none;
+  }
+
+  .bottom-bar {
+    .p-4 {
+      font-size: var(--text-xs);
+    }
+    display: block;
   }
 }
