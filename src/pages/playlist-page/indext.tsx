@@ -57,7 +57,11 @@ export default function PlaylistPage() {
             <div className="flex-col ml-4 mr-10">
               {activePLaylist.videos &&
                 activePLaylist.videos.map((data: any) => (
-                  <VideoCardExpanded cardData={data} playlistId={playlistId} />
+                  <VideoCardExpanded
+                    cardData={data}
+                    key={Math.random()}
+                    playlistId={playlistId}
+                  />
                 ))}
             </div>
           </div>
