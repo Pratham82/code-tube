@@ -38,7 +38,7 @@ export default function Navbar() {
       </div>
 
       <ul className="flex items-center pages">
-        <Link to="/profile" className="flex flex-col items-center">
+        <Link to="/" className="flex flex-col items-center">
           <li className={`${currentTheme}profile-logo`}>
             <i className="far fa-user" />
           </li>

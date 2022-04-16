@@ -8,11 +8,11 @@ const links = [
     title: "HOME",
     icon: { active: "fas fa-home-alt", inactive: "far fa-home-alt" },
   },
-  {
-    link: "/explore",
-    title: "EXPLORE",
-    icon: { active: "fas fa-compass", inactive: "far fa-compass" },
-  },
+  // {
+  //   link: "/",
+  //   title: "EXPLORE",
+  //   icon: { active: "fas fa-compass", inactive: "far fa-compass" },
+  // },
   {
     link: "/playlists",
     title: "PLAYLISTS",
@@ -46,7 +46,6 @@ export default function Sidebar() {
       className={`${currentTheme}sidebar ${
         expandedSidebar ? "sidebar-expanded" : "sidebar-collapsed"
       }`}
-      style={{ color: "red" }}
     >
       <div className="flex flex-col p-8">
         {links.map(({ link, title, icon }) => (
