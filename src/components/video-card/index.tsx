@@ -6,13 +6,19 @@ import usePlayList from "hooks/usePlaylists";
 import useTheme from "hooks/useTheme";
 import useVideos from "hooks/useVideos";
 import { useState, useEffect, useRef, useCallback } from "react";
+import { useLocation } from "react-router-dom";
 import {
   addToPredefinedPlaylist,
   removeFromPredefinedPlaylist,
 } from "services/common";
 import { setClickedVideo } from "services/videos";
 import "styles/videoCard.scss";
-import { LIKES, WATCH_LATER } from "types/playlists";
+import {
+  LIKES,
+  WATCH_LATER,
+  HISTORY,
+  REMOVED_FROM_HISTORY,
+} from "types/playlists";
 import { SET_SELECTED_VIDEO } from "types/videos";
 import { isDuplicate } from "utils/index";
 
@@ -54,6 +60,8 @@ export default function VideoCard({ cardData }: any) {
     setClickedVideo(videoId, dispatchVideos, SET_SELECTED_VIDEO);
   };
 
+  const { pathname } = useLocation();
+
   const handleAction = (dispatchType: string, playlistType: string) => {
     switch (playlistType) {
       case WATCH_LATER:
@@ -91,6 +99,14 @@ export default function VideoCard({ cardData }: any) {
               playlistType,
               currentTheme,
             );
+      case HISTORY:
+        return removeFromPredefinedPlaylist(
+          videoId,
+          dispatchPlaylist,
+          dispatchType,
+          playlistType,
+          currentTheme,
+        );
       default:
         setIsOpen(false);
     }
@@ -100,7 +116,7 @@ export default function VideoCard({ cardData }: any) {
   };
 
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col video-card-container">
       <div
         className={`${currentTheme}video-card`}
         onMouseEnter={() => {
@@ -151,13 +167,25 @@ export default function VideoCard({ cardData }: any) {
           <Tooltip text={title} delay={500}>
             <p className="title">{title}</p>
           </Tooltip>
-          <button
-            type="button"
-            className={`${currentTheme}options`}
-            onClick={onOptionsClick}
-          >
-            <i className="fas fa-ellipsis-v" />
-          </button>
+          <div className="flex ml-auto">
+            {pathname.includes("history") && (
+              <button
+                type="button"
+                className={`${currentTheme}options`}
+                onClick={() => handleAction(REMOVED_FROM_HISTORY, HISTORY)}
+              >
+                <i className="fas fa-trash" />
+              </button>
+            )}
+
+            <button
+              type="button"
+              className={`${currentTheme}options`}
+              onClick={onOptionsClick}
+            >
+              <i className="fas fa-ellipsis-v" />
+            </button>
+          </div>
         </div>
       )}
       <ActionModal
