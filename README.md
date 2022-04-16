@@ -128,6 +128,30 @@ REACT_APP_JWT_SECRET = <JWT_SECRET_KEY_OF_YOUR_CHOICE>
 npm start
 ```
 
+- build app for production
+
+```
+npm run build
+```
+
+- start test runner in watch mode
+
+```
+npm run test
+```
+
+code linting with eslint
+```
+npm run lint
+```
+
+
+fix all linting errors with eslint
+```
+npm run lint:fix
+```
+
+
 ---
 
 ## 👨‍💻 Connect with me
