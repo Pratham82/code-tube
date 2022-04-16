@@ -52,7 +52,7 @@ export default function BottomBar() {
                 ? `${currentTheme}active-link`
                 : `${currentTheme}inactive-link`
             }
-            key={Math.random()}
+            key={link}
           >
             <div className="flex items-center p-6 text-center flex-col">
               <i

@@ -59,7 +59,8 @@ export default function PlaylistPage() {
                 activePLaylist.videos.map((data: any) => (
                   <VideoCardExpanded
                     cardData={data}
-                    key={Math.random()}
+                    // eslint-disable-next-line no-underscore-dangle
+                    key={data._id}
                     playlistId={playlistId}
                   />
                 ))}

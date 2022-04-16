@@ -56,7 +56,7 @@ export default function Sidebar() {
                 ? `${currentTheme}active-link`
                 : `${currentTheme}inactive-link`
             }
-            key={Math.random()}
+            key={link}
           >
             <div
               className={`flex items-center p-10 text-center ${
