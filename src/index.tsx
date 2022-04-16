@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./index.css";
+import "./index.scss";
 import { makeServer } from "mocks/server";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
