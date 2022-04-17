@@ -4,9 +4,9 @@
 
 # Code Tube
 
-
 ![Forks](https://img.shields.io/github/forks/pratham82/code-tube)
 ![Stars](https://img.shields.io/github/stars/pratham82/code-tube)
+
 <!-- ![License](https://img.shields.io/github/license/pratham82/code-tube) -->
 
 </div>
@@ -18,25 +18,34 @@
 - [Code Tube](#code-tube)
   - [📕 Table of Contents](#-table-of-contents)
   - [🔗 Live Link](#-live-link)
+  - [📹 Demo](#-demo)
   - [📖 About](#-about)
   - [🛠️ Tech Stack](#️-tech-stack)
   - [🚀 Features](#-features)
   - [✨ Features You will See in Future](#-features-you-will-see-in-future)
   - [🔌 Getting Started](#-getting-started)
+  - [🖥️ Available commands](#️-available-commands)
   - [👨‍💻 Connect with me](#-connect-with-me)
 
 ---
 
 ## 🔗 Live Link
+
 - [Live Site](https://code-tube.vercel.app/)
+
+---
+
+## 📹 Demo
+
+---
 
 ## 📖 About
 
 Code tube a video library application curated with coding videos. You can watch a detailed
- videos on programming and go in depth of specific category
-
+videos on programming and go in depth of specific category
 
 ---
+
 ## 🛠️ Tech Stack
 
 - React
@@ -52,31 +61,37 @@ Code tube a video library application curated with coding videos. You can watch 
 ## 🚀 Features
 
 **Video Listing**
+
 - Show all videos
-- List all available categories 
+- List all available categories
 
 **Filtering videos**
+
 - Filter videos based on categories
 
 **Single Video Page**
+
 - Show Single video
 - Add/remove video from liked videos
 - Add/remove video from watch later
 - Add/remove video from playlist
 
 **Liked videos**
+
 - Add video in `liked videos`
 - Remove video from `liked videos`
 - List all videos added to `liked videos`
 - Remove all videos from `liked videos`
 
 **Watch Later**
+
 - Add video in `watch later`
 - Remove video from `watch later`
 - List all videos added to `watch later`
 - Remove all videos from `watch later`
 
 **Playlists Management**
+
 - Create a `playlist`
 - Remove `playlist`
 - Add video in `playlist`
@@ -84,15 +99,14 @@ Code tube a video library application curated with coding videos. You can watch 
 - Play a specific video from `playlist`
 
 **Playlist Page**
+
 - Show all playlists
 - Show all videos in playlist
 - Delete a playlist
 
 **Dark and Light mode**
 
-
 ---
-
 
 ## ✨ Features You will See in Future
 
@@ -115,6 +129,8 @@ cd code-tube
 ```
 npm install
 ```
+
+## 🖥️ Available commands
 
 <!-- - create a `.env` file at the root level of the directory (at the level of `package.json`) and create a variable like mentioned below
 
@@ -141,16 +157,16 @@ npm run test
 ```
 
 code linting with eslint
+
 ```
 npm run lint
 ```
 
-
 fix all linting errors with eslint
+
 ```
 npm run lint:fix
 ```
-
 
 ---
 
